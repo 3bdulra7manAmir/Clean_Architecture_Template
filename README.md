@@ -1,7 +1,7 @@
 # Flutter_Clean_Arc
 <br>
 
-Clean Arc Template
+Clean Arc Template Project
 
 <br>
 
