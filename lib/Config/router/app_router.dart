@@ -1,37 +1,53 @@
-
-
-import 'package:clean_arc/Config/router/app_routes.dart';
+import 'package:flutter/foundation.dart';
+import 'package:flutter/material.dart';
 import 'package:go_router/go_router.dart';
+import '../../Core/widgets/circular_indicator.dart';
+
+import '../../Features/01_onboarding/presentation/screens/splash_view.dart';
+import 'app_routes.dart';
+import 'route_observer.dart';
+
 
 abstract class AppRouter
 {
   AppRouter._();
-
+  static final navigatorState = GlobalKey<NavigatorState>(debugLabel: 'root');
+  static String? currentRoute;
   static final router = GoRouter(
-    initialLocation: AppRoutes.kMainView,
+    navigatorKey: navigatorState,
+    debugLogDiagnostics: kDebugMode,
+    observers: [NavigatorObserverWithTracking(),],
+    initialLocation: AppRoutes.splash,
+    errorBuilder: (_, _) => const Scaffold(body: Center(child: CustomCircularIndicator()),),
     routes:
     [
-      // GoRoute(
-      //   path: AppRoutes.kMainView,
-      //   name: AppRoutes.kMainView,
-      //   builder: (context, state) => const MainView(),
-      // ),
+      /// [ OnBoarding Feature ]
+      // [Splash]
+      GoRoute(
+        path: AppRoutes.splash,
+        name: AppRoutes.splash,
+        builder: (_, _) => const Splash(),
+      ),
 
       // StatefulShellRoute.indexedStack(
-      //   builder: (context, state, navigationShell) => BottomNavExample(navigationShell: navigationShell),
-      //   branches: [
+      //   builder: (_, __, navigationShell) => navigationShell,
+      //   branches:
+      //   [
+      //     /// Home
       //     StatefulShellBranch(
-      //       initialLocation: AppRoutes.kHomeView,
-      //       routes: [
+      //       initialLocation: AppRoutes.home,
+      //       routes: <RouteBase>
+      //       [
       //         GoRoute(
-      //           name: AppRoutes.kHomeView,
-      //           path: AppRoutes.kHomeView,
-      //           builder: (context, state) => const HomePage(),
+      //           path: AppRoutes.home,
+      //           name: AppRoutes.home,
+      //           builder: (_, _) => const Home(),
+      //           routes: []
       //         ),
       //       ],
       //     ),
-      //   ]
+      //   ],
       // ),
-    ] 
+    ]
   );
 }

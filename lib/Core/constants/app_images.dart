@@ -2,40 +2,24 @@ class AppAssets
 {
   AppAssets._();
 
-  static final iconsPNG = _AppIconsPNG._();
-  static final iconsSVG = _AppIconsSVG._();
-
-  static final imagesPNG = _AppPNGIMGs._();
-  static final imagesSVG = _AppSVGIMGs._();
+  static final icons = _Icons._();
+  static final imgs = _IMGs._();
 }
 
-
-class _AppIconsPNG
+///-----------------------------------------------------------------//
+class _Icons
 {
-  _AppIconsPNG._();
+  _Icons._();
 
-  final String avatarIconPNG = "";
+  /// [Splash]
+  final String treeLeaf = "assets/icons/Splash/Tree_Leaf.svg";
 }
 
-
-class _AppIconsSVG
+///-----------------------------------------------------------------//
+class _IMGs
 {
-  _AppIconsSVG._();
+  _IMGs._();
 
-  final String avatarIconSVG = "";
-}
-
-
-class _AppPNGIMGs
-{
-  _AppPNGIMGs._();
-
-  final String avatarIMGPNG = "";
-}
-
-class _AppSVGIMGs
-{
-  _AppSVGIMGs._();
-
-  final String avatarIMGSVG = "";
+  ///[Home]
+  final String user = "assets/imgs/Home/User.png";
 }

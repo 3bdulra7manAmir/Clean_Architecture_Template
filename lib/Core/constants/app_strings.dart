@@ -2,7 +2,15 @@ abstract class AppStrings
 {
   AppStrings._();
 
-  static const hello = "Hello";
-  static const hitMe = "Hit Me";
-  static const loremIpsum = "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s.";
+  //-----------------------//
+  //      OnBoarding1      //
+  //-----------------------//
+
+  /// [ fruit ]
+  static const String fruit = "Fruit";
+  /// [ hub ]
+  static const String hub = "HUB";
+  /// [ اكتشف تجربة تسوق فريدة مع FruitHUB. استكشف مجموعتنا الواسعة من الفواكه الطازجة الممتازة واحصل على أفضل العروض والجودة العالية. ]
+  static const String onBoardingDescription = "اكتشف تجربة تسوق فريدة مع FruitHUB. استكشف مجموعتنا الواسعة من الفواكه الطازجة الممتازة واحصل على أفضل العروض والجودة العالية.";
+
 }
